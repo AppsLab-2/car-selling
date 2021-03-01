@@ -1,2 +1,2 @@
 # car-finder
-<image src= "https://download1078.mediafire.com/5hj593zlfgmg/ryzhix0x80aldbg/wireframe.png">
+<image src= "https://github.com/AppsLab-2/car-selling/blob/master/wireframe.png">
