@@ -1,0 +1,10 @@
+.example-icon {
+  font-weight: normal;
+  font-size: medium;
+  margin-right: 5%;
+}
+
+.app-title {
+  margin-right: 2%;
+  cursor: pointer;
+}

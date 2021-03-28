@@ -1,0 +1,16 @@
+<mat-grid-list cols="5" rowHeight="2:1">
+  <mat-grid-tile>
+    <form [formGroup]="searchForm"></form>
+
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+
+
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="4">
+
+
+
+  </mat-grid-tile>
+</mat-grid-list>
