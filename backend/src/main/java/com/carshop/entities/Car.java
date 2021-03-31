@@ -25,6 +25,8 @@ public class Car {
     @ManyToOne
     private Model model;
 
+    private String description;
+
     private int productionYear;
 
     private int hp;

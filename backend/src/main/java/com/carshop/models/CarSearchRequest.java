@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CarSearchRequest {
 
-    private Brand brands;
+    private Brand brand;
 
     private Model model;
 

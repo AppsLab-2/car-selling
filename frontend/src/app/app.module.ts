@@ -17,6 +17,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxSliderModule} from '@angular-slider/ngx-slider';
+import {HttpClientModule} from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import {NgxSliderModule} from '@angular-slider/ngx-slider';
     MatSelectModule,
     MatOptionModule,
     ReactiveFormsModule,
-    NgxSliderModule
+    NgxSliderModule,
+    HttpClientModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
