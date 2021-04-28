@@ -20,13 +20,15 @@ import {NgxSliderModule} from '@angular-slider/ngx-slider';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {LoginComponent} from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
