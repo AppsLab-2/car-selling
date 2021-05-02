@@ -5,14 +5,15 @@ import com.carshop.entities.Car;
 import com.carshop.models.CarSearchRequest;
 import com.carshop.services.CarService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("cars")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class CarController {
 
     private final CarService carService;
@@ -25,5 +26,10 @@ public class CarController {
     @PostMapping(value = "search")
     public List<Car> searchCars(@RequestBody CarSearchRequest request) {
         return carService.searchCars(request);
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Car> getCarDetail(@PathVariable int id) {
+        return ResponseEntity.of(carService.getCarById(id));
     }
 }

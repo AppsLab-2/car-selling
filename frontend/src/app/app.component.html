@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar *ngIf="!show">
   <button mat-icon-button aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
@@ -12,6 +12,8 @@
     <mat-icon>info</mat-icon>
     <span >About us</span>
   </button>
+
+  <button *ngIf="!loggedIn" mat-raised-button color="primary" type="submit" (click)="login()">Log In</button>
 
 </mat-toolbar>
 <router-outlet></router-outlet>

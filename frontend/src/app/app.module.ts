@@ -21,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {LoginComponent} from './components/login/login.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {LoginComponent} from './components/login/login.component';
     HomeComponent,
     SearchComponent,
     AboutUsComponent,
-    LoginComponent
+    LoginComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -51,4 +53,5 @@ import {LoginComponent} from './components/login/login.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

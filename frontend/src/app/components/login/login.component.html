@@ -1,11 +1,11 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  <label>
-    Username:
+<img
+  src="https://cdn.discordapp.com/attachments/769873789395402756/838432415943884860/181328432_585618669081996_7518784528488375717_n.png"
+  class="image">
+
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+  <label>Username</label>
     <input type="text" formControlName="username">
-  </label>
-  <label>
-    Password:
+  <label>Password</label>
     <input type="password" formControlName="password">
-  </label>
   <button type="submit" [disabled]="!loginForm.valid">Login</button>
 </form>

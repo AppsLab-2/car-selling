@@ -67,7 +67,6 @@ public class CarshopServiceApplication implements CommandLineRunner {
             Car car1 = new Car();
             car1.setPrice(90_000);
             car1.setHp(310);
-            car1.setBrand(bmw);
             car1.setModel(bmw.getModels().get(0));
 
             Car car2 = new Car();

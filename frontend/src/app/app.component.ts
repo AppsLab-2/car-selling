@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private router: Router,
+              private authService: AuthService) {
+  }
+
   title = 'carshop-ui';
+
+  get loggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  get show(): boolean {
+    return this.router.url === '/login';
+  }
+
+  login(): void {
+    this.router.navigateByUrl('/login');
+  }
+
 }

@@ -1,0 +1,20 @@
+<div *ngIf="car != undefined" class="wrapper">
+  <h1>{{car.brand.name}} {{car.model.name}}</h1>
+  <img src="https://www.luxurylifestylemag.co.uk/wp-content/uploads/2020/04/A1813694_large.jpg"
+       class="image">
+  <label class="price">{{car.price | currency}}</label>
+  <div class="info-cards">
+    <div class="info-card">
+      <label>Production Year: {{car.productionYear}}</label>
+      <label>Horsepower: {{car.hp}}</label>
+      <label>Fuel: {{car.fuel}}</label>
+      <label>Transmission: {{car.transmission}}</label>
+      <label>Type: {{car.type}}</label>
+    </div>
+    <div class="info-card">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import com.carshop.entities.Car;
 import com.carshop.models.CarSearchRequest;
 import com.carshop.repositories.CarRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.convert.QueryByExamplePredicateBuilder;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +12,7 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +22,10 @@ public class CarService {
 
     public List<Car> searchCars(CarSearchRequest request) {
         return carRepository.findAll(getQuerySpecification(request));
+    }
+
+    public Optional<Car> getCarById(int id) {
+        return carRepository.findById(id);
     }
     
     public List<Car> getAll() {
