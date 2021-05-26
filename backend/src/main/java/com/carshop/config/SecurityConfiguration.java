@@ -32,6 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         .allowedMethods("*")
                         .allowedOrigins("http://localhost:4200")
                         .allowCredentials(true);
+
             }
         };
     }

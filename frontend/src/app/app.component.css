@@ -8,3 +8,7 @@
   margin-right: 2%;
   cursor: pointer;
 }
+
+.login-button {
+  margin-left: auto;
+}

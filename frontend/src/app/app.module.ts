@@ -3,9 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './components/home/home.component';
 import {SearchComponent} from './components/search/search.component';
-import {AboutUsComponent} from './components/about-us/about-us.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -22,15 +20,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {LoginComponent} from './components/login/login.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { GuideComponent } from './components/guide/guide.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SearchComponent,
-    AboutUsComponent,
     LoginComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,
