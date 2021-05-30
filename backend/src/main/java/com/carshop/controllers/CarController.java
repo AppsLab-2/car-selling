@@ -1,6 +1,5 @@
 package com.carshop.controllers;
 
-import com.carshop.entities.Brand;
 import com.carshop.entities.Car;
 import com.carshop.models.CarSearchRequest;
 import com.carshop.services.CarService;
@@ -8,8 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("cars")
@@ -31,5 +30,10 @@ public class CarController {
     @GetMapping("{id}")
     public ResponseEntity<Car> getCarDetail(@PathVariable int id) {
         return ResponseEntity.of(carService.getCarById(id));
+    }
+
+    @GetMapping("type")
+    public Collection<String> getCarType() {
+        return this.carService.getCarTypes();
     }
 }

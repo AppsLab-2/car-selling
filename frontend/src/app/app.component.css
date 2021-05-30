@@ -1,7 +1,7 @@
 .example-icon {
   font-weight: normal;
   font-size: medium;
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 .app-title {
@@ -11,4 +11,8 @@
 
 .login-button {
   margin-left: auto;
+}
+
+.icon-text {
+  margin-left: 5px;
 }

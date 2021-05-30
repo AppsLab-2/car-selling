@@ -1,16 +1,14 @@
 <mat-toolbar *ngIf="!show">
   <span routerLink="/" class="app-title">AutoBum</span>
-  <button routerLink="search" class="example-icon" mat-icon-button>
-    <mat-icon>search</mat-icon>
-    <span >Search cars</span>
-  </button>
 
-  <button routerLink="guide" class="example-icon" mat-icon-button>
-    <mat-icon>info</mat-icon>
-    <span >Guide</span>
+  <button routerLink="favorite" class="example-icon" mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+    <span class="icon-text">Liked</span>
   </button>
 
   <button class="login-button" *ngIf="!loggedIn" mat-raised-button color="primary" type="submit" (click)="login()">Log In</button>
+  <button class="login-button" *ngIf="loggedIn" mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button>
+
 
 </mat-toolbar>
 <router-outlet></router-outlet>

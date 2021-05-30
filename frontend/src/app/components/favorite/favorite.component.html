@@ -1,0 +1,18 @@
+<h1 *ngIf="cars.length" class="heading">Favorite Cars</h1>
+<h1 *ngIf="!cars.length" class="no-cars">No favorite cars :(</h1>
+<div class="container">
+  <a *ngFor="let car of cars" [routerLink]="['/detail', car.id]">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{car.brand.name}}  {{car.model.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="car.image" alt="Car photo">
+      <mat-card-content>
+        <p class="description">{{ car.description }}</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <h2 class="price">{{car.price | currency }}</h2>
+      </mat-card-footer>
+    </mat-card>
+  </a>
+</div>

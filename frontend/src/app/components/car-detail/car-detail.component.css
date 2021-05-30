@@ -13,3 +13,12 @@ mat-card {
   margin: 20px 0;
   font-weight: bold;
 }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  margin-left: auto;
+}

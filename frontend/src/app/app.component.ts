@@ -13,8 +13,6 @@ export class AppComponent {
               private authService: AuthService) {
   }
 
-  title = 'carshop-ui';
-
   get loggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
@@ -25,6 +23,10 @@ export class AppComponent {
 
   login(): void {
     this.router.navigateByUrl('/login');
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
 }

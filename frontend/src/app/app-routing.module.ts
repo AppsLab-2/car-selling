@@ -3,13 +3,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './components/search/search.component';
 import {LoginComponent} from './components/login/login.component';
 import {CarDetailComponent} from './components/car-detail/car-detail.component';
-import {GuideComponent} from './components/guide/guide.component';
+import {FavoriteComponent} from './components/favorite/favorite.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: 'browse', component: SearchComponent},
-  {path: 'guide', component: GuideComponent},
   {path: 'login', component: LoginComponent},
   {path: 'detail/:id', component: CarDetailComponent},
+  {path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: '/browse'}
 ];
 

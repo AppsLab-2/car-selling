@@ -15,12 +15,14 @@ export class SearchComponent implements OnInit {
   filterGroup = new FormGroup({
     brand: new FormControl(''),
     maxPrice: new FormControl(''),
-    transmission: new FormControl('')
+    transmission: new FormControl(''),
+    type: new FormControl('')
   });
 
   transmissions = ['Automatic', 'Manual'];
   cars: Observable<Car[]>;
   brands: Brand[];
+  types: string[];
 
   constructor(private carService: CarService) {}
 
@@ -28,6 +30,8 @@ export class SearchComponent implements OnInit {
     this.cars = this.getCars();
     this.carService.getBrands()
       .subscribe(brands => this.brands = brands);
+    this.carService.getCarTypes()
+      .subscribe(types => this.types = types);
   }
 
   getCars(): Observable<Car[]> {

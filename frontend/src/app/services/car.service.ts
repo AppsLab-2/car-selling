@@ -26,6 +26,10 @@ export class CarService {
     return this.http.get<Brand[]>(`${environment.apiUrl}brands`);
   }
 
+  getCarTypes(): Observable<string[]> {
+    return this.http.get<string[]>(`${environment.apiUrl}cars/type`);
+  }
+
   filterCars(filterOptions: FilterOptions): Observable<Car[]> {
     return this.getCars().pipe(
       map((cars: Car[]) => {
@@ -37,6 +41,9 @@ export class CarService {
         }
         if (filterOptions.maxPrice) {
           cars = cars.filter((car) => car.price <= filterOptions.maxPrice);
+        }
+        if (filterOptions.type) {
+          cars = cars.filter((car) => car.type === filterOptions.type);
         }
         return cars;
       })

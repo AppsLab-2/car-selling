@@ -15,12 +15,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxSliderModule} from '@angular-slider/ngx-slider';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {LoginComponent} from './components/login/login.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
-import { GuideComponent } from './components/guide/guide.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import {AuthInterceptor} from './interceptors/auth-interceptor';
+import {FavoriteService} from './services/favorite.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { GuideComponent } from './components/guide/guide.component';
     SearchComponent,
     LoginComponent,
     CarDetailComponent,
-    GuideComponent
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,13 @@ import { GuideComponent } from './components/guide/guide.component';
     MatCardModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    FavoriteService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

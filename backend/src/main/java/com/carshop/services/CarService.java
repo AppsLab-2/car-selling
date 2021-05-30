@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -27,9 +29,16 @@ public class CarService {
     public Optional<Car> getCarById(int id) {
         return carRepository.findById(id);
     }
-    
+
     public List<Car> getAll() {
         return carRepository.findAll();
+    }
+
+    public Collection<String> getCarTypes() {
+        return this.getAll()
+                .stream()
+                .map(Car::getType)
+                .collect(Collectors.toSet());
     }
 
     private Specification<Car> getQuerySpecification(
